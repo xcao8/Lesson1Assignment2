@@ -2,11 +2,11 @@ import argparse
 import get_interpretation
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--id", help="value for key 'signal' in JSON payload",type=str)
+parser.add_argument("--signal", help="value of ID for key 'signal' in JSON payload",type=str)
 args = parser.parse_args()
 
 def main():
-    print(get_interpretation(args.signal))
+    print(get_interpretation.get_interpretation(args.signal))
 
 
 
