@@ -1,14 +1,14 @@
 import argparse
-import server_communication_handler as client
+import get_interpretation
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--signal", help="value for key 'signal' in JSON payload",type=str)
+parser.add_argument("--id", help="value for key 'signal' in JSON payload",type=str)
 args = parser.parse_args()
 
 def main():
-    client.post_message(url, payload)
+    print(get_interpretation(args.signal))
+
+
 
 if __name__=="__main__" :
-    url = "http://127.0.0.1:5000/"
-    payload={"signal": args.signal}
     main()
