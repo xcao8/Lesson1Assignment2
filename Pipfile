@@ -12,6 +12,7 @@ pytest = "*"
 pycodestyle = "*"
 pylint = "*"
 pytest-cov = "*"
+invoke = "*"
 
 [requires]
 python_version = "3.6"
