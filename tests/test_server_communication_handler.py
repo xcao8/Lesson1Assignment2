@@ -1,10 +1,10 @@
 from unittest.mock import patch
 import json
-from server_communication_handler import post_message
+from signal_interpreter_client.server_communication_handler import post_message
 
 
 
-@patch("server_communication_handler.post")
+@patch("signal_interpreter_client.server_communication_handler.post")
 def test_post_message(mock_post):
     post_message("http://127.0.0.1:5000/", {"signal": "11"})
     mock_post.assert_called_once()
