@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 requests = "*"
 argparse = "*"
+pytest = "*"
+pyyaml = "*"
 
 [dev-packages]
 pytest = "*"
@@ -13,6 +15,7 @@ pycodestyle = "*"
 pylint = "*"
 pytest-cov = "*"
 invoke = "*"
+responses = "*"
 
 [requires]
 python_version = "3"
