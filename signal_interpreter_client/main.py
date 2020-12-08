@@ -32,6 +32,7 @@ def main():
     interpretation = get_interpretation(args.signal)
     print(interpretation)
 
+
 def init():
     if __name__ == "__main__":
             main()

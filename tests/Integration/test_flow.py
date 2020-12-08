@@ -1,5 +1,6 @@
 import responses
 from unittest.mock import patch, call
+from unittest.mock import patch
 import sys
 from signal_interpreter_client.main import main
 
@@ -15,3 +16,4 @@ def test_server_integration(mock_print):
     )
     main()
     assert mock_print.mock_calls == [call("ECU Reset")]
+
