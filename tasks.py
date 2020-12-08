@@ -6,7 +6,7 @@ CURR_DIR = os.path.abspath(os.path.dirname(__file__))
 SRC_DIR = os.path.join(CURR_DIR, "signal_interpreter_client")
 TEST_DIR = os.path.join(CURR_DIR, "tests")
 COV_FILE = os.path.join(CURR_DIR, "coveragerc")
-INT_TEST_DIR = os.path.join(CURR_DIR, "tests/Integration")
+INT_TEST_DIR = os.path.join(TEST_DIR, "Integration")
 
 @task
 def style(_):
