@@ -4,14 +4,15 @@ from requests import post, exceptions
 
 logger = logging.getLogger(__name__)
 
+
 class SignalInterpreterClientConnectionError(Exception):
-    def __init__(self,*args,**kwargs):
-        Exception.__init__(self,*args,**kwargs)
+    def __init__(self, *args, **kwargs):
+        Exception.__init__(self, *args, **kwargs)
 
 
 class SignalInterpreterClientConnectionUnsuccessfulError(Exception):
-    def __init__(self,*args,**kwargs):
-        Exception.__init__(self,*args,**kwargs)
+    def __init__(self, *args, **kwargs):
+        Exception.__init__(self, *args, **kwargs)
 
 
 def post_message(url, payload):

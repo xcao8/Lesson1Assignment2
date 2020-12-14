@@ -24,6 +24,6 @@ def unit_test(_):
     subprocess.call(cmd, shell=True)
 
 @task
-def integration_test():
+def integration_test(_):
     cmd = f"pytest {INT_TEST_DIR}"
     subprocess.call(cmd,shell=True)

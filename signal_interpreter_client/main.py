@@ -9,11 +9,10 @@ try:
 except ImportError:
     from signal_interpreter_client.get_interpretation import get_interpretation
 
-
 os.chdir(os.path.dirname(os.path.dirname
                          (os.path.realpath(__file__))))
 
-with open(r'cfg\logger_configuration.yaml',"r") as f:
+with open(r'cfg\logger_configuration.yaml', "r") as f:
     config = yaml.safe_load(f.read())
     logging.config.dictConfig(config)
 
@@ -35,4 +34,4 @@ def main():
 
 def init():
     if __name__ == "__main__":
-            main()
+        main()
