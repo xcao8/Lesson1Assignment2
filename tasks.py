@@ -12,6 +12,8 @@ INT_TEST_DIR = os.path.join(TEST_DIR, "Integration")
 def style(_):
     cmd = f"pycodestyle {SRC_DIR} --ignore=E501"
     subprocess.call(cmd, shell=True)
+    cmd = f"pycodestyle {TEST_DIR} --ignore=E501"
+    subprocess.call(cmd, shell=True)
 
 @task
 def lint(_):
@@ -26,4 +28,4 @@ def unit_test(_):
 @task
 def integration_test(_):
     cmd = f"pytest {INT_TEST_DIR}"
-    subprocess.call(cmd,shell=True)
+    subprocess.call(cmd, shell=True)

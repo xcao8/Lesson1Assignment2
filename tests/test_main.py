@@ -22,6 +22,7 @@ def test_main(mock_parse_arguments, mock_get_interpretation, mock_print):
     mock_get_interpretation.assert_called_with(MockArguments.signal)
     mock_print.mock_calls = [call("ECU Reset")]
 
+
 @patch("signal_interpreter_client.main.main")
 @patch("signal_interpreter_client.main.__name__", "__main__")
 def test_init(mock_main):

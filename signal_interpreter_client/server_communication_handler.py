@@ -6,15 +6,11 @@ logger = logging.getLogger(__name__)
 
 
 class SignalInterpreterClientConnectionError(Exception):
-    "Class for singal interpreter client connection error exception"
-    def __init__(self, *args, **kwargs):
-        Exception.__init__(self, *args, **kwargs)
+    """Empty class"""
 
 
 class SignalInterpreterClientConnectionUnsuccessfulError(Exception):
-    "Class for singal interpreter  unsuccessful error exception"
-    def __init__(self, *args, **kwargs):
-        Exception.__init__(self, *args, **kwargs)
+    """Empty class"""
 
 
 def post_message(url, payload):

@@ -16,4 +16,3 @@ def test_server_integration(mock_print):
     )
     main()
     assert mock_print.mock_calls == [call("ECU Reset")]
-
