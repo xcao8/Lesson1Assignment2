@@ -1,8 +1,8 @@
 from unittest.mock import patch
 import json
-from signal_interpreter_client.server_communication_handler import post_message
-from requests.exceptions import Timeout
 import pytest
+from requests.exceptions import Timeout
+from signal_interpreter_client.server_communication_handler import post_message
 
 
 @patch("signal_interpreter_client.server_communication_handler.post")

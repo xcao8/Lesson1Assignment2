@@ -3,12 +3,13 @@ from signal_interpreter_client.main import main, init, ArgumentParser, parse_arg
 
 
 class MockArguments:
+    """This is class for mocking args"""
     signal = "11"
 
 
 @patch.object(ArgumentParser, "parse_args", return_value=MockArguments)
 @patch.object(ArgumentParser, "add_argument")
-def test_parse_arguments(mock_add_argument, mock_parse_args):
+def test_parse_arguments(mock_add_argument):
     assert parse_arguments() == MockArguments
     mock_add_argument.assert_called_with("-s", "--signal", required=True, help="signal (e.g. 11)")
 
