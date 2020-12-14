@@ -1,7 +1,8 @@
 from unittest.mock import patch
 import json
 import pytest
-from requests.exceptions import Timeout, ConnectionError, HTTPError
+from requests.exceptions import Timeout, HTTPError
+from requests.exceptions import ConnectionError as MyConnectionError
 from signal_interpreter_client.server_communication_handler import SignalInterpreterClientConnectionError, \
     SignalInterpreterClientConnectionUnsuccessfulError, post_message
 
@@ -23,7 +24,7 @@ def test_post_message_with_timeout(mock_post):
                                      headers={"content-type": "application/json"})
 
 
-@patch("signal_interpreter_client.server_communication_handler.post", side_effect=ConnectionError)
+@patch("signal_interpreter_client.server_communication_handler.post", side_effect=MyConnectionError)
 def test_post_message_with_conn_err(mock_post):
     with pytest.raises(SignalInterpreterClientConnectionError):
         post_message("http://127.0.0.1:5000/", {"signal": "11"})
@@ -39,4 +40,3 @@ def test_post_message_with_http_err(mock_post):
         mock_post.assert_called_once()
         mock_post.assert_called_with("http://127.0.0.1:5000/", data=json.dumps({"signal": "11"}),
                                      headers={"content-type": "application/json"})
-

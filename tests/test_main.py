@@ -9,7 +9,7 @@ class MockArguments:
 
 @patch.object(ArgumentParser, "parse_args", return_value=MockArguments)
 @patch.object(ArgumentParser, "add_argument")
-def test_parse_arguments(mock_add_argument,mock_parse_args):
+def test_parse_arguments(mock_add_argument, mock_parse_args):
     assert parse_arguments() == MockArguments
     mock_add_argument.assert_called_with("-s", "--signal", required=True, help="signal (e.g. 11)")
     mock_parse_args.assert_called_once()

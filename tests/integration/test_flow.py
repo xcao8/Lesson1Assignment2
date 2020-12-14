@@ -1,7 +1,6 @@
-import responses
-from unittest.mock import patch, call
-from unittest.mock import patch
 import sys
+from unittest.mock import patch, call
+import responses
 from signal_interpreter_client.main import main
 
 
