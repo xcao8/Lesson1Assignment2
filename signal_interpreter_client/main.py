@@ -1,8 +1,8 @@
+import os
 from argparse import ArgumentParser
 import logging
 import logging.config
 import yaml
-import os
 
 try:
     from get_interpretation import get_interpretation
