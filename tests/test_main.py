@@ -9,9 +9,10 @@ class MockArguments:
 
 @patch.object(ArgumentParser, "parse_args", return_value=MockArguments)
 @patch.object(ArgumentParser, "add_argument")
-def test_parse_arguments(mock_add_argument):
+def test_parse_arguments(mock_add_argument,mock_parse_args):
     assert parse_arguments() == MockArguments
     mock_add_argument.assert_called_with("-s", "--signal", required=True, help="signal (e.g. 11)")
+    mock_parse_args.assert_called_once()
 
 
 @patch("builtins.print")
@@ -24,8 +25,8 @@ def test_main(mock_parse_arguments, mock_get_interpretation, mock_print):
     mock_print.mock_calls = [call("ECU Reset")]
 
 
-@patch("signal_interpreter_client.main.main")
-@patch("signal_interpreter_client.main.__name__", "__main__")
-def test_init(mock_main):
-    init()
-    mock_main.assert_called_once()
+def test_init():
+    with patch("signal_interpreter_client.main.main") as mock_main:
+        with patch("signal_interpreter_client.main.__name__", "__main__"):
+            init()
+            mock_main.assert_called_once()

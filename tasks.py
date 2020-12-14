@@ -33,5 +33,5 @@ def unit_test(_):
 
 @task
 def integration_test(_):
-    cmd = f"pytest {INT_TEST_DIR}"
+    cmd = f"pytest {INT_TEST_DIR} --verbose"
     subprocess.call(cmd, shell=True)
